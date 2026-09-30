@@ -1,5 +1,10 @@
 # ASO - Administració de Sistemes Operatius
 
+<p align="center">
+  <img src="https://img.shields.io/badge/ASO-Administraci%C3%B3n%20de%20Sistemes%20Operatius-blue" alt="ASO badge" />
+  <img src="https://img.shields.io/badge/Repositori-Documentaci%C3%B3-green" alt="Documentation badge" />
+</p>
+
 Aquest repositori recopila la documentació de l’assignatura d’Administració de Sistemes Operatius i la seva evolució al llarg dels projectes i sprints que es realitzin.
 
 ## Objectiu
@@ -25,7 +30,12 @@ Aquí s’aniran afegint les diferents activitats, tasques i projectes de l’as
 Aquest repositori està preparat per a ser publicat amb GitHub Pages.
 Pots veure la versió web pública en: https://lmanughionoiu.github.io/ASO-Manu/
 
-Projecte: ASO-Manu  
-Autor: Manu Ghionoiu [©](LICENSE.md)
+### Projecte
+
+- ASO-Manu
+
+### Autor
+
+- Manu Ghionoiu [©](LICENSE.md)
 
 [© 2025 Manu Ghionoiu](LICENSE.md)
