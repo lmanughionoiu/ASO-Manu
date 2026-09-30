@@ -30,6 +30,10 @@ Sistema antic d’inicialització basat en scripts i nivells d’execució, util
 
 Tots els elements en verd corresponen a serveis. Si un servei es troba en aquest entorn, pot ser reiniciat mitjançant la metodologia establerta pel gestor de serveis de SystemV. Qualsevol component gestionat per aquest estàndard es troba allotjat dins del directori `init.d`, on es mantenen els scripts de control per iniciar, aturar i verificar el seu estat.
 
+![alt text](image-14.png)
+
+Dins de `/etc` es troben els directoris `rc0.d` fins a `rc6.d`, un per cada nivell d’execució del sistema. Cada directori encapsula els scripts associats a un estat concret d’arrencada o aturada, permetent determinar quins serveis s’han d’iniciar, aturar o mantenir actius segons el runlevel seleccionat.
+
 ### 2.1 Directoris
 
 Els directoris de `/etc/init.d`, `/etc/rc*.d` i altres rutes contenen els scripts que gestionen el arrencada i la parada dels serveis.
