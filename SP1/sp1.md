@@ -32,7 +32,9 @@ Tots els elements en verd corresponen a serveis. Si un servei es troba en aquest
 
 ![alt text](image-14.png)
 
-Dins de `/etc` es troben els directoris `rc0.d` fins a `rc6.d`, un per cada nivell d’execució del sistema. Cada directori encapsula els scripts associats a un estat concret d’arrencada o aturada, permetent determinar quins serveis s’han d’iniciar, aturar o mantenir actius segons el runlevel seleccionat.
+A `/etc` apareixen els directoris `rc0.d` a `rc6.d`, un per cada nivell d’execució del sistema. Cada carpeta actua com a llista de control per al runlevel corresponent, establint quins serveis s’han d’iniciar o aturar en cada estat operacional. En particular, `/etc/rc0.d` conté enllaços amb el prefix `K`, els quals indiquen que el sistema ha d’aturar els serveis associats quan entra en el nivell d’apagada.
+
+![alt text](image-15.png)
 
 ### 2.1 Directoris
 
