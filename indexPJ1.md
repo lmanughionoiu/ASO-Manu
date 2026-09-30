@@ -1,19 +1,22 @@
 ---
 layout: default
-title: "TASCA: .target personalitzat"
+title: "Projecte 1"
 ---
 
-# TASCA: .target personalitzat
+# Projecte 1
 
-Aquest repositori conté la documentació i les captures del projecte relacionades amb la configuració d’un .target personalitzat i el servei del sistema associat.
+Aquest apartat s’utilitza com a índex general del primer projecte de l’assignatura. Aquí es poden afegir els diferents sprints o tasques que es vagin desenvolupant.
 
 ## Índex
 
-- [Sprint 1: TASCA: .target personalitzat](SP1/sp1.md)
+- [Sprint 1](SP1/sp1.md)
+- [Sprint 2](#)
+- [Sprint 3](#)
+- [Sprint 4](#)
 
 ## Descripció
 
-En aquest document es mostra el procés complet: creació del target, preparació del script d’inicialització, definició del servei `systemd` i verificació del seu funcionament.
+En aquest repositori es guardarà la documentació i les activitats corresponents al Projecte 1, i cada sprint o tasca s’afegirà a mesura que es desenvolupi.
 
 [© 2025 Manu Ghionoiu](LICENSE.md)
 
