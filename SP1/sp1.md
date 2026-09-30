@@ -10,13 +10,25 @@ Sistema d’inicialització tradicional i modern que permet iniciar els serveis 
 
 Els runlevels i els targets són els estats del sistema en els quals es defineixen quins serveis han d’estar actius. En Ubuntu modern, es treballa principalment amb targets de systemd.
 
+![alt text](image-10.png)
+
 ### 1.2 Quin sistema utilitza Ubuntu?
 
 Ubuntu utilitza `systemd` com a sistema d’inicialització principal, que substitueix models anteriors com SystemV i Upstart.
 
+S'utilitza `man init` per poder veure-ho o bé `readlink -v /sbin/init`.
+
+![alt text](image-11.png)
+
+![alt text](image-12.png)
+
 ## 2. SystemV
 
 Sistema antic d’inicialització basat en scripts i nivells d’execució, utilitzat en versions antigues de Linux.
+
+![alt text](image-13.png)
+
+Tots els elements en verd corresponen a serveis. Si un servei es troba en aquest entorn, pot ser reiniciat mitjançant la metodologia establerta pel gestor de serveis de SystemV. Qualsevol component gestionat per aquest estàndard es troba allotjat dins del directori `init.d`, on es mantenen els scripts de control per iniciar, aturar i verificar el seu estat.
 
 ### 2.1 Directoris
 
