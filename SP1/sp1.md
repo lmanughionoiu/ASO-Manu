@@ -56,13 +56,17 @@ Amb `init 6` reiniciem i amb `init 0` apaguem.
 
 `systemd` és el sistema d’inicialització actual en Ubuntu. Organitza el procés d’arrencada mitjançant unitats com targets, serveis i sockets.
 
+### 3.1 Directoris
+
+Els directoris principals són `/etc/systemd/system/` i `/usr/lib/systemd/system/`, on es defineixen les unitats del sistema.
+
 ![alt text](image-18.png)
 
 `/lib/systemd/system` és el directori de referència per defecte on s’instal·len les unitats de systemd aportades pel sistema i els paquets oficials. Aquest camí actua com a base estàndard per a la configuració del daemon, mentre que `/etc/systemd/system` permet sobreescriure o personalitzar aquesta configuració sense modificar els fitxers originals. Quan existeixen duplicats, les definicions presents a `/etc/` tenen prioritat sobre les de `/lib/`, cosa que garanteix un mecanisme de configuració local i específica per al sistema.
 
-### 3.1 Directoris
+![alt text](image-19.png)
 
-Els directoris principals són `/etc/systemd/system/` i `/usr/lib/systemd/system/`, on es defineixen les unitats del sistema.
+`/etc/systemd/system` emmagatzema la configuració local del sistema i els enllaços simbòlics cap a les unitats habilitades. Aquest directori constitueix el punt d’override administratiu, per la qual cosa les definicions que hi apareixen tenen prioritat sobre les de `/lib/systemd/system` quan es produeix una duplicació. D’aquesta manera, es poden personalitzar serveis, targets i dependències sense modificar els fitxers base proporcionats pels paquets del sistema.
 
 ### 3.2 systemctl
 
