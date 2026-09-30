@@ -5,7 +5,12 @@ title: "TASCA: .target personalitzat"
 
 ## Introducció
 
-Crear un *target* de systemd personalitzat amb el teu nom que depengui d'un *target* existent. A continuació, configurar aquest nou *target* com el *target* per defecte del sistema i associar-hi un servei (`.service`) encarregat d'executar un *script* amb permisos de superusuari (*root*) durant el procés d'arrencada del sistema operatiu.
+L’activitat consisteix en els següents punts:
+
+- Crear un *target* de systemd personalitzat amb el teu nom i fer-lo dependre d’un *target* existent.
+- Configurar aquest nou *target* com a *target* per defecte del sistema.
+- Associar-hi un servei (`.service`) que executi un *script* amb permisos de superusuari (*root*).
+- Garantir que aquest servei s’iniciï correctament durant l’arrencada del sistema operatiu.
 
 ![Captura d'autenticació com a root](image.png)
 
