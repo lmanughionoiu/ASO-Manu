@@ -72,6 +72,10 @@ Els directoris principals són `/etc/systemd/system/` i `/usr/lib/systemd/system
 
 `systemctl` és l’eina principal per gestionar serveis, targets i l’estat del sistema amb systemd.
 
+![alt text](image-20.png)
+
+`systemctl list-units --type=target` permet enumerar les unitats de tipus `target` que es troben carregades i actives al sistema. Aquesta vista és útil per verificar l’estat actual del runtime de systemd i confirmar quins targets estan activats, com ara `graphical.target` o `multi-user.target`, així com la relació de dependències entre ells.
+
 ### 3.3 Dependències
 
 Les dependències indiquen l’ordre en què han d’iniciar-se els serveis i els targets. Això permet assegurar que un servei no es llança abans que les seves dependències estiguin preparades.
