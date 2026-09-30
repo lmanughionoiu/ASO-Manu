@@ -44,8 +44,10 @@ Pas 8: establim `manu.target` com a target per defecte perquè el servei es carr
 
 ![Target per defecte](image-7.png)
 
-![Confirmació del target personalitzat](image-9.png)
+Pas 9: comprovem que les dependències del `.target` estan correctament configurades i que el servei queda encadenat dins del target.
 
-Pas 9: comprovem amb `systemctl status` que `manuscript.service` està actiu i en execució.
+![Comprovació de les dependències del target](image-9.png)
+
+Pas 10: comprovem amb `systemctl status` que `manuscript.service` està actiu i en execució.
 
 ![Comprovació de l'estat del servei](image-8.png)
