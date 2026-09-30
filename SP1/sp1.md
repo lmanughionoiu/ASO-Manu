@@ -76,9 +76,17 @@ Els directoris principals són `/etc/systemd/system/` i `/usr/lib/systemd/system
 
 `systemctl list-units --type=target` permet enumerar les unitats de tipus `target` que es troben carregades i actives al sistema. Aquesta vista és útil per verificar l’estat actual del runtime de systemd i confirmar quins targets estan activats, com ara `graphical.target` o `multi-user.target`, així com la relació de dependències entre ells.
 
+![alt text](image-21.png)
+
+Amb aquesta comanda veem quin target tenim com a default.
+
 ### 3.3 Dependències
 
 Les dependències indiquen l’ordre en què han d’iniciar-se els serveis i els targets. Això permet assegurar que un servei no es llança abans que les seves dependències estiguin preparades.
+
+![alt text](image-22.png)
+
+`systemctl list-dependencies graphical.target` permet visualitzar l’arbre de unitats que formen el gra de dependències necessari per activar l’entorn gràfic. Aquesta sortida inclou també targets associats com `multi-user.target`, la qual cosa posa de manifest que l’arrencada del mode gràfic no és un estat isolat, sinó una cadena de dependències que s’ha de satisfer abans que el sistema arribi al mode d’interfície visual.
 
 ### 3.4 Modificar el target provisionalment
 
