@@ -92,6 +92,12 @@ Les dependències indiquen l’ordre en què han d’iniciar-se els serveis i el
 
 Es pot canviar el target actual temporalment per provar un altre estat d’execució sense afectar la configuració definitiva del sistema.
 
+![alt text](image-24.png)
+
+![alt text](image-23.png)
+
+`systemctl isolate rescue.target` canvia temporalment el sistema al mode de rescat sense alterar el target predeterminat que s’utilitzarà en la propera arrencada. Aquesta ordre és útil per accedir a un entorn mínim de recuperació, facilitant diagnòstics i reparacions sense afectar la configuració permanent del sistema.
+
 ### 3.5 Modificar el target definitivament
 
 Es configura el target per defecte del sistema perquè el sistema arranqui en el mode desitjat de manera persistent.
