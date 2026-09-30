@@ -1,15 +1,7 @@
 # TASCA: .target personalitzat
 
-Aquest repositori recull la documentació i les captures del Sprint 1 sobre la creació d’un .target personalitzat, la configuració del servei del sistema i la seva verificació.
+Aquest repositori recull la documentació d'aquesta assignatura.
 
-## Índex
-
-- [Índex del projecte](indexPJ1.md)
-- [Sprint 1: TASCA: .target personalitzat](SP1/sp1.md)
-
-## Descripció
-
-En aquest exercici es configura un target personalitzat a systemd, es prepara un script d’inicialització, es crea un servei del sistema i es comprova el seu funcionament en arrencar.
 
 ## Estructura del repositori
 
@@ -19,6 +11,10 @@ En aquest exercici es configura un target personalitzat a systemd, es prepara un
 
 ## Informació
 
+Aquest repositori esta preparat per a ser publicat amb GitHub Pages.
+Pots veure la versió web pública en: https://lmanughionoiu.github.io/ASO-Manu/
+
 Projecte: ASO-Manu  
-Tema: .target personalitzat i servei del sistema  
-Autor: Manu Ghionoiu
+Autor: Manu Ghionoiu [©](LICENSE.md)
+
+[© 2025 Manu Ghionoiu](LICENSE.md)

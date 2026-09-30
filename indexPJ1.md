@@ -15,5 +15,5 @@ Aquest repositori conté la documentació i les captures del projecte relacionad
 
 En aquest document es mostra el procés complet: creació del target, preparació del script d’inicialització, definició del servei `systemd` i verificació del seu funcionament.
 
-© 2025 Manu Ghionoiu
+[© 2025 Manu Ghionoiu](LICENSE.md)
 
