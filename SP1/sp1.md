@@ -32,9 +32,13 @@ Tots els elements en verd corresponen a serveis. Si un servei es troba en aquest
 
 ![alt text](image-14.png)
 
+![alt text](image-15.png)
+
 A `/etc` apareixen els directoris `rc0.d` a `rc6.d`, un per cada nivell d’execució del sistema. Cada carpeta actua com a llista de control per al runlevel corresponent, establint quins serveis s’han d’iniciar o aturar en cada estat operacional. En particular, `/etc/rc0.d` conté enllaços amb el prefix `K`, els quals indiquen que el sistema ha d’aturar els serveis associats quan entra en el nivell d’apagada.
 
-![alt text](image-15.png)
+![alt text](image-16.png)
+
+`/etc/rc5.d` mostra principalment enllaços amb el prefix `S`, que indiquen els serveis que s’inicien en el nivell 5 del sistema. Aquest patró és el complement directe de `rc0.d`: mentre el primer agrupa les accions de parada en el mode d’apagada, el nivell 5 concentra les unitats que s’han de carregar per proporcionar el entorn multimèdia o d’usuari habitual.
 
 ### 2.1 Directoris
 
