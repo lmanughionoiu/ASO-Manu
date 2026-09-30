@@ -102,17 +102,58 @@ Es pot canviar el target actual temporalment per provar un altre estat d’execu
 
 Es configura el target per defecte del sistema perquè el sistema arranqui en el mode desitjat de manera persistent.
 
+![alt text](image-25.png)
+
+La llista de targets mostra que `default.target` és un enllaç simbòlic cap a `graphical.target`.
+
+![alt text](image-26.png)
+
+Les ordres eliminen l'enllaç `default.target` existent dins `/lib/systemd/system` i en creen un de nou cap a `rescue.target`. `ls -l | grep default.target` comprova que l'enllaç s'ha creat correctament. Com que `/etc/systemd/system` té prioritat sobre `/lib/systemd/system`, aquest canvi només determina el target per defecte si no hi ha un `default.target` configurat a `/etc/systemd/system`. Per establir o restaurar el target per defecte de manera recomanada, es pot executar `sudo systemctl set-default rescue.target` o `sudo systemctl set-default graphical.target`, respectivament.
+
+
 ### 3.6 Afegir serveis a un target
 
 Un target pot incloure serveis o dependències que s’activin al mateix temps per garantir el funcionament correcte de la configuració.
+
+![alt text](image-27.png)
+
+En habilitar `ssh`, systemd registra el servei com a dependència de `multi-user.target` mitjançant l'enllaç simbòlic `multi-user.target.wants/ssh.service`. Així, el servei queda configurat per iniciar-se quan s'activa aquest target, inclòs durant l'arrencada si forma part del camí d'arrencada predeterminat. La resposta `enabled` de `systemctl is-enabled ssh` confirma aquesta configuració persistent; no indica, per si sola, que el servei estigui en execució.
+
+![alt text](image-28.png)
+
+`S01ssh` és un enllaç simbòlic de `/etc/rc5.d` cap a l'script `/etc/init.d/ssh`. En la nomenclatura SystemV, `S` indica una acció d'inici en entrar al runlevel 5, i `01` n'indica l'ordre de seqüència. Aquest enllaç reflecteix la configuració de compatibilitat amb SystemV; systemd gestiona el servei mitjançant la seva unitat nativa `ssh.service` quan aquesta està disponible.
 
 ### 3.7 Crear un target
 
 Crear un target personalitzat permet definir una configuració específica de serveis i dependències adaptada a les necessitats del sistema.
 
+![alt text](image-29.png)
+
+`/etc/systemd/system/multi-user.target.wants` conté les unitats que systemd vol activar quan s'inicia `multi-user.target`; habitualment s'hi representen amb enllaços simbòlics creats en habilitar els serveis. La presència de `ssh.service` indica que està associat a aquest target, però no confirma que estigui en execució. La comanda `ls` de la captura només mostra els noms; `ls -l` permet veure també els destins dels enllaços.
+
+![alt text](image-30.png)
+
+La unitat declara `basic.target` com a dependència amb `Requires`, mentre que `After` n'estableix l'ordre d'activació; `After` per si sol no crea una dependència. `Conflicts` impedeix que `multi-user.target` coexisteixi amb `rescue.target` i `rescue.service`, de manera que activar-ne un atura les unitats en conflicte. `AllowIsolate=yes` permet seleccionar aquest target amb `systemctl isolate multi-user.target`, que canvia el conjunt d'unitats actives d'acord amb les dependències del target; la directiva no executa l'aïllament per si mateixa. Com que la captura mostra la definició del sistema a `/lib/systemd/system`, les personalitzacions locals s'han de fer amb un override a `/etc/systemd/system`.
+
 ### 3.8 Crear un servei
 
 Un servei defineix com s’ha d’executar un programa o script, amb l’usuari, l’ordre i les dependències corresponents.
+
+![alt text](image-31.png)
+
+Es crea /etc/rc.local amb un script que afegeix una línia a a /etc/passwd. És una prova amb permisos de root que no s’hauria d’utilitzar en un sistema real.
+
+![alt text](image-32.png)
+
+chmod +x rc.local converteix el fitxer en executable perquè systemd el pugui iniciar.
+
+![alt text](image-33.png)
+
+La unitat comprova que /etc/rc.local existeixi, l’executa amb ExecStart i queda associada a multi-user.target. Una vegada el servei funciona podem reiniciar l'ordenador i veure el resultat.
+
+![alt text](image-34.png)
+
+La consulta d’/etc/passwd mostra dues línies finals amb a, fet que confirma dues execucions de l’script. La resta de coincidències provenen d’altres línies que també contenen aquesta lletra.
 
 ## 4. Introducció Activitat
 
