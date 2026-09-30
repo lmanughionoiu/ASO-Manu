@@ -26,6 +26,10 @@ S'utilitza `man init` per poder veure-ho o bé `readlink -v /sbin/init`.
 
 Sistema antic d’inicialització basat en scripts i nivells d’execució, utilitzat en versions antigues de Linux.
 
+### 2.1 Directoris
+
+Els directoris de `/etc/init.d`, `/etc/rc*.d` i altres rutes contenen els scripts que gestionen el arrencada i la parada dels serveis.
+
 ![alt text](image-13.png)
 
 Tots els elements en verd corresponen a serveis. Si un servei es troba en aquest entorn, pot ser reiniciat mitjançant la metodologia establerta pel gestor de serveis de SystemV. Qualsevol component gestionat per aquest estàndard es troba allotjat dins del directori `init.d`, on es mantenen els scripts de control per iniciar, aturar i verificar el seu estat.
@@ -40,17 +44,21 @@ A `/etc` apareixen els directoris `rc0.d` a `rc6.d`, un per cada nivell d’exec
 
 `/etc/rc5.d` mostra principalment enllaços amb el prefix `S`, que indiquen els serveis que s’inicien en el nivell 5 del sistema. Aquest patró és el complement directe de `rc0.d`: mentre el primer agrupa les accions de parada en el mode d’apagada, el nivell 5 concentra les unitats que s’han de carregar per proporcionar el entorn multimèdia o d’usuari habitual.
 
-### 2.1 Directoris
-
-Els directoris de `/etc/init.d`, `/etc/rc*.d` i altres rutes contenen els scripts que gestionen el arrencada i la parada dels serveis.
-
 ### 2.2 Procés d’arrencada
 
 El sistema executa una seqüència de passos per carregar els serveis essencials abans d’arribar a l’estat funcional del sistema.
 
+![alt text](image-17.png)
+
+Amb `init 6` reiniciem i amb `init 0` apaguem.
+
 ## 3. systemd
 
 `systemd` és el sistema d’inicialització actual en Ubuntu. Organitza el procés d’arrencada mitjançant unitats com targets, serveis i sockets.
+
+![alt text](image-18.png)
+
+`/lib/systemd/system` és el directori de referència per defecte on s’instal·len les unitats de systemd aportades pel sistema i els paquets oficials. Aquest camí actua com a base estàndard per a la configuració del daemon, mentre que `/etc/systemd/system` permet sobreescriure o personalitzar aquesta configuració sense modificar els fitxers originals. Quan existeixen duplicats, les definicions presents a `/etc/` tenen prioritat sobre les de `/lib/`, cosa que garanteix un mecanisme de configuració local i específica per al sistema.
 
 ### 3.1 Directoris
 
