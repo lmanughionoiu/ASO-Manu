@@ -2,8 +2,67 @@
 layout: default
 title: "TASCA: .target personalitzat"
 ---
+## 1. SystemV, Upstart i systemd
 
-## Introducció
+Sistema d’inicialització tradicional i modern que permet iniciar els serveis del sistema en el moment correcte del procés d’arrencada.
+
+### 1.1 Runlevels o targets?
+
+Els runlevels i els targets són els estats del sistema en els quals es defineixen quins serveis han d’estar actius. En Ubuntu modern, es treballa principalment amb targets de systemd.
+
+### 1.2 Quin sistema utilitza Ubuntu?
+
+Ubuntu utilitza `systemd` com a sistema d’inicialització principal, que substitueix models anteriors com SystemV i Upstart.
+
+## 2. SystemV
+
+Sistema antic d’inicialització basat en scripts i nivells d’execució, utilitzat en versions antigues de Linux.
+
+### 2.1 Directoris
+
+Els directoris de `/etc/init.d`, `/etc/rc*.d` i altres rutes contenen els scripts que gestionen el arrencada i la parada dels serveis.
+
+### 2.2 Procés d’arrencada
+
+El sistema executa una seqüència de passos per carregar els serveis essencials abans d’arribar a l’estat funcional del sistema.
+
+## 3. systemd
+
+`systemd` és el sistema d’inicialització actual en Ubuntu. Organitza el procés d’arrencada mitjançant unitats com targets, serveis i sockets.
+
+### 3.1 Directoris
+
+Els directoris principals són `/etc/systemd/system/` i `/usr/lib/systemd/system/`, on es defineixen les unitats del sistema.
+
+### 3.2 systemctl
+
+`systemctl` és l’eina principal per gestionar serveis, targets i l’estat del sistema amb systemd.
+
+### 3.3 Dependències
+
+Les dependències indiquen l’ordre en què han d’iniciar-se els serveis i els targets. Això permet assegurar que un servei no es llança abans que les seves dependències estiguin preparades.
+
+### 3.4 Modificar el target provisionalment
+
+Es pot canviar el target actual temporalment per provar un altre estat d’execució sense afectar la configuració definitiva del sistema.
+
+### 3.5 Modificar el target definitivament
+
+Es configura el target per defecte del sistema perquè el sistema arranqui en el mode desitjat de manera persistent.
+
+### 3.6 Afegir serveis a un target
+
+Un target pot incloure serveis o dependències que s’activin al mateix temps per garantir el funcionament correcte de la configuració.
+
+### 3.7 Crear un target
+
+Crear un target personalitzat permet definir una configuració específica de serveis i dependències adaptada a les necessitats del sistema.
+
+### 3.8 Crear un servei
+
+Un servei defineix com s’ha d’executar un programa o script, amb l’usuari, l’ordre i les dependències corresponents.
+
+## 4. Introducció Activitat
 
 L’activitat consisteix en els següents punts:
 
