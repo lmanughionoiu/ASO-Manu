@@ -1,6 +1,6 @@
 # TASCA: .target personalitzat
 
-Aquest repositori recopila la documentació i les captures del Sprint 1 sobre la creació d’un .target personalitzat, el servei del sistema i la seva verificació.
+Aquest repositori recull la documentació i les captures del Sprint 1 sobre la creació d’un .target personalitzat, la configuració del servei del sistema i la seva verificació.
 
 ## Índex
 
@@ -9,12 +9,12 @@ Aquest repositori recopila la documentació i les captures del Sprint 1 sobre la
 
 ## Descripció
 
-En aquest exercici es configura un target personalitzat a systemd, es prepara un script d’inicialització, es crea un servei systemd i es valida el seu correcte funcionament en arrencar el sistema.
+En aquest exercici es configura un target personalitzat a systemd, es prepara un script d’inicialització, es crea un servei del sistema i es comprova el seu funcionament en arrencar.
 
 ## Estructura del repositori
 
-- `SP1/` — captures i documentació del Sprint 1
-- `indexPJ1.md` — pàgina d’índex del projecte
+- `SP1/` — imatges i documentació del Sprint 1
+- `indexPJ1.md` — índex del projecte
 - `README.md` — pàgina principal del repositori
 
 ## Informació

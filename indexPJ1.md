@@ -5,7 +5,7 @@ title: "TASCA: .target personalitzat"
 
 # TASCA: .target personalitzat
 
-Aquest repositori conté la documentació i les captures del projecte relacionat amb la configuració d’un .target personalitzat i el servei de sistema associat.
+Aquest repositori conté la documentació i les captures del projecte relacionades amb la configuració d’un .target personalitzat i el servei del sistema associat.
 
 ## Índex
 
@@ -13,7 +13,7 @@ Aquest repositori conté la documentació i les captures del projecte relacionat
 
 ## Descripció
 
-En aquest document es mostra el procés de creació del target, la configuració del script d’inicialització, la definició del servei `systemd` i la verificació del seu funcionament.
+En aquest document es mostra el procés complet: creació del target, preparació del script d’inicialització, definició del servei `systemd` i verificació del seu funcionament.
 
 © 2025 Manu Ghionoiu
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Sprint 1: Instal·lació, Configuració Inicial i Programari de Base"
+title: "TASCA: .target personalitzat"
 ---
 
 ![Captura d'autenticació com a root](image.png)
