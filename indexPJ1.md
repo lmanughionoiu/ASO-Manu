@@ -5,6 +5,10 @@ title: "Projecte 1"
 
 # Projecte 1
 
+## Introducció
+
+Crear un *target* de systemd personalitzat amb el teu nom que depengui d'un *target* existent. A continuació, configurar aquest nou *target* com el *target* per defecte del sistema i associar-hi un servei (`.service`) encarregat d'executar un *script* amb permisos de superusuari (*root*) durant el procés d'arrencada del sistema operatiu.
+
 Aquest apartat s’utilitza com a índex general del primer projecte de l’assignatura. Aquí es poden afegir els diferents sprints o tasques que es vagin desenvolupant.
 
 ## Índex
